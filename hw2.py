@@ -74,9 +74,9 @@ class SarcasmDataset(Dataset):
             return_tensors="pt",
         )
 
-        input_ids = encoding["input_ids"].flatten().to(dtype=torch.long)            # (max_length,)
-        attention_mask = encoding["attention_mask"].flatten().to(dtype=torch.long)  # (max_length,)
-        label_tensor = torch.tensor(label, dtype=torch.long).view(1)                # (1,)
+        input_ids = encoding["input_ids"].flatten().to(dtype=torch.long)            
+        attention_mask = encoding["attention_mask"].flatten().to(dtype=torch.long)  
+        label_tensor = torch.tensor(label, dtype=torch.long)                 
 
         return {
             "input_ids": input_ids,
